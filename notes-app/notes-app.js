@@ -13,12 +13,26 @@ const filters = {
     searchText: ''
 }
 
-// localStorage.setItem('location', 'philadelfia') 
+// const user = {
+//     name: 'Filipa',
+//     age:30
+// }
 
-console.log(localStorage.getItem('location'))
+// const userJSON = JSON.stringify(user) //to convert the object in string (we use before we wright our object)
+// console.log(user)
+// localStorage.setItem('user', userJSON)
 
-localStorage.removeItem
+const userJSON = localStorage.getItem('user')
+const user = JSON.parse(userJSON) // to convert the newly created string in an object so I can access 1 proprety ( we use JSON parse just after we read it)
+console.log(`${user.name} is ${user.age}`)
 
+ // localStorage.setItem('location', 'philadelfia') // for creating and updating data
+
+// console.log(localStorage.getItem('location')) // for reading our data
+
+// localStorage.removeItem('location') // remove data from aplication data
+
+// localStorage.clear() // remove data from aplication data
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function(note){
